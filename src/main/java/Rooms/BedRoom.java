@@ -8,7 +8,7 @@ public class BedRoom extends Room {
     private int number;
     private RoomType type;
     private double nightlyRate;
-    public BedRoom(int capacity, RoomType type, double nightlyRate){
+    public BedRoom(int capacity, RoomType type, double nightlyRate, int number){
         super(capacity);
         this.number = number;
         this.type = type;
@@ -26,4 +26,6 @@ public class BedRoom extends Room {
     public double getNightlyRate() {
         return nightlyRate;
     }
+
+
 }
