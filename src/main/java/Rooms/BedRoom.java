@@ -27,5 +27,9 @@ public class BedRoom extends Room {
         return nightlyRate;
     }
 
+    public int checkHowManyGuests(){
+        return getGuestList().size();
+    }
+
 
 }

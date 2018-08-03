@@ -19,4 +19,21 @@ public class Hotel{
     public void checkIn(Guest guest, BedRoom bedRoom){
         bedRoom.setGuestList(guest);
     }
+
+    public boolean checkIfCheckedIn(Guest guest, BedRoom bedroom){
+        if (bedroom.getGuestList().contains(guest)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void checkOut(Guest guest, BedRoom bedroom){
+
+        if (checkIfCheckedIn(guest, bedroom)) {
+            bedroom.getGuestList().remove(guest);
+        } else {
+            return;
+        }
+    }
 }
