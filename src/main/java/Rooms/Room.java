@@ -21,4 +21,8 @@ public abstract class Room {
         return guestList;
     }
 
+    public void setGuestList(Guest guest){
+        this.guestList.add(guest);
+    }
+
 }

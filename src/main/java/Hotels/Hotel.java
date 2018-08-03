@@ -1,4 +1,6 @@
 package Hotels;
+import Guests.Guest;
+import Rooms.BedRoom;
 import Rooms.Room;
 import java.util.ArrayList;
 
@@ -12,5 +14,9 @@ public class Hotel{
 
     public ArrayList<Room> getRoomList(){
         return roomList;
+    }
+
+    public void checkIn(Guest guest, BedRoom bedRoom){
+        bedRoom.setGuestList(guest);
     }
 }
