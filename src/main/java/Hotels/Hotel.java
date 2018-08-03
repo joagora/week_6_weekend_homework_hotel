@@ -36,4 +36,9 @@ public class Hotel{
             return;
         }
     }
+
+
+    public ArrayList<Guest> checkGuestsCheckedIn(BedRoom bedroom){
+        return bedroom.getGuestList();
+    }
 }
