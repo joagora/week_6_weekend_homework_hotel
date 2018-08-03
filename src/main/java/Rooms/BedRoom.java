@@ -31,5 +31,13 @@ public class BedRoom extends Room {
         return getGuestList().size();
     }
 
+    public boolean checkIfSpaceAvailable(){
+        if (getCapacity() > checkHowManyGuests()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }
