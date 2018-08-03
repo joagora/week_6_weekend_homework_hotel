@@ -27,4 +27,14 @@ public class BedRoomTest {
     public void hasGuestList(){
         assertEquals(0, bedRoom.getGuestList().size());
     }
+
+    @Test
+    public void hasType(){
+        assertEquals(RoomType.DOUBLE, bedRoom.getType());
+    }
+
+    @Test
+    public void hasNightlyRate(){
+        assertEquals(50.50, bedRoom.getNightlyRate(), 2);
+    }
 }
