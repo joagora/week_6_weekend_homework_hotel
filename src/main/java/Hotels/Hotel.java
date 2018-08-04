@@ -67,6 +67,7 @@ public class Hotel{
         if ((numberOfGuests <= bedroom.getCapacity()) && (bedroom.getBookingStatus() == false)){
             bedroom.changeBookingName(guestName);
             bedroom.changeBookingStatusToTrue();
+
         } else {
             return;
         }

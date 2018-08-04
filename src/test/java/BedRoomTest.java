@@ -93,4 +93,16 @@ public class BedRoomTest {
         bedRoom.changeBookingStatusToFalse();
         assertEquals(false, bedRoom.getBookingStatus());
     }
+
+    @Test
+    public void canCheckHowManyNightsWereBooked(){
+        bedRoom.assignNumberOfNights(4);
+        assertEquals(4, bedRoom.checkBookedNumberOfNights());
+    }
+
+    @Test
+    public void canAssignNumberOfNightsToBooking(){
+        bedRoom.assignNumberOfNights(4);
+        assertEquals(4, bedRoom.checkBookedNumberOfNights());
+    }
 }

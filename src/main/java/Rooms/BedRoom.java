@@ -61,4 +61,12 @@ public class BedRoom extends Room {
     public void changeBookingName(String bookingName) {
         this.booking.setBookingName(bookingName);
     }
+
+    public int checkBookedNumberOfNights(){
+        return this.booking.getNumberOfNights();
+    }
+
+    public void assignNumberOfNights(int numberOfNights){
+        this.booking.setNumberOfNights(numberOfNights);
+    }
 }
