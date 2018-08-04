@@ -76,7 +76,7 @@ public class BedRoomTest {
 
     @Test
     public void canGetBookingName(){
-        assertEquals("", bedRoom.getBookingName());
+        assertEquals("", bedRoom.checkBookingName());
     }
 
     @Test

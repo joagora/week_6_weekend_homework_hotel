@@ -52,7 +52,7 @@ public class Hotel{
         if (checkIfCheckedIn(guest, bedroom)) {
             bedroom.getGuestList().remove(guest);
             bedroom.changeBookingStatusToFalse();
-            bedroom.setBookingName("");
+            bedroom.changeBookingName("");
         } else {
             return;
         }
@@ -65,7 +65,7 @@ public class Hotel{
 
     public void bookRoom(BedRoom bedroom, String guestName, int numberOfGuests){
         if ((numberOfGuests <= bedroom.getCapacity()) && (bedroom.getBookingStatus() == false)){
-            bedroom.setBookingName(guestName);
+            bedroom.changeBookingName(guestName);
             bedroom.changeBookingStatusToTrue();
         } else {
             return;

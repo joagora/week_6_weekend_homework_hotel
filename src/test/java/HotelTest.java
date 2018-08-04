@@ -81,7 +81,7 @@ public class HotelTest {
     @Test
     public void canBookRoom(){
         hotel.bookRoom(bedRoom, guest.getName(), 2);
-        assertEquals("Mike", bedRoom.getBookingName());
+        assertEquals("Mike", bedRoom.checkBookingName());
         assertEquals(true, bedRoom.getBookingStatus());
     }
 

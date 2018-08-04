@@ -1,4 +1,5 @@
 package Rooms;
+import Booking.Booking;
 import Enums.RoomCollectionType;
 import Enums.RoomType;
 import Guests.Guest;
@@ -8,14 +9,13 @@ public class BedRoom extends Room {
 
     private RoomCollectionType roomCollectionType;
     private double nightlyRate;
-    private boolean bookingStatus;
-    private String bookingName;
+    private Booking booking;
+
     public BedRoom(RoomCollectionType roomCollectionType, double nightlyRate){
         super(roomCollectionType.getRoomType().getCapacity());
         this.roomCollectionType = roomCollectionType;
         this.nightlyRate = nightlyRate;
-        this.bookingStatus = false;
-        this.bookingName = "";
+        this.booking = new Booking();
     }
 
     public int getNumber() {
@@ -43,22 +43,22 @@ public class BedRoom extends Room {
     }
 
     public boolean getBookingStatus(){
-        return this.bookingStatus;
+        return this.booking.getBookingStatus();
     }
 
     public void changeBookingStatusToTrue(){
-        this.bookingStatus = true;
+        this.booking.setBookingStatus(true);
     }
 
     public void changeBookingStatusToFalse(){
-        this.bookingStatus = false;
+        this.booking.setBookingStatus(false);
     }
 
-    public String getBookingName(){
-        return this.bookingName;
+    public String checkBookingName(){
+        return this.booking.getBookingName();
     }
 
-    public void setBookingName(String bookingName) {
-        this.bookingName = bookingName;
+    public void changeBookingName(String bookingName) {
+        this.booking.setBookingName(bookingName);
     }
 }
