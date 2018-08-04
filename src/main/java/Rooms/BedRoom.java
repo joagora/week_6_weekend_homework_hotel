@@ -59,6 +59,7 @@ public class BedRoom extends Room {
         return this.bookingName;
     }
 
-
-
+    public void setBookingName(String bookingName) {
+        this.bookingName = bookingName;
+    }
 }

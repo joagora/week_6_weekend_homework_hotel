@@ -19,6 +19,7 @@ public class Hotel{
     public void checkIn(Guest guest, BedRoom bedRoom){
         if (bedRoom.checkIfSpaceAvailable()){
             bedRoom.setGuestList(guest);
+            bedRoom.changeBookingStatusToTrue();
         } else {
             return;
         }
@@ -37,6 +38,8 @@ public class Hotel{
 
         if (checkIfCheckedIn(guest, bedroom)) {
             bedroom.getGuestList().remove(guest);
+            bedroom.changeBookingStatusToFalse();
+            bedroom.setBookingName("");
         } else {
             return;
         }
@@ -46,4 +49,15 @@ public class Hotel{
     public ArrayList<Guest> checkGuestsCheckedIn(BedRoom bedroom){
         return bedroom.getGuestList();
     }
+
+    public void bookRoom(BedRoom bedroom, String guestName, int numberOfGuests){
+        if ((numberOfGuests <= bedroom.getCapacity()) && (bedroom.getBookingStatus() == false)){
+            bedroom.setBookingName(guestName);
+            bedroom.changeBookingStatusToTrue();
+        } else {
+            return;
+        }
+
+    }
+
 }

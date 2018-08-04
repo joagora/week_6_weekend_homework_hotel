@@ -47,9 +47,31 @@ public class HotelTest {
     }
 
     @Test
+    public void bookingStatusTrueAfterCheckIn(){
+        hotel.checkIn(guest, bedRoom);
+        assertEquals(true, bedRoom.getBookingStatus());
+    }
+
+    @Test
+    public void bookingStatusFalseAfterCheckout(){
+        hotel.checkIn(guest, bedRoom);
+        assertEquals(true, bedRoom.getBookingStatus());
+        hotel.checkOut(guest, bedRoom);
+        assertEquals(false, bedRoom.getBookingStatus());
+    }
+
+    @Test
     public void canCheckGuestListForRoom(){
         hotel.checkIn(guest, bedRoom);
         hotel.checkIn(guest2, bedRoom);
         assertEquals(2, hotel.checkGuestsCheckedIn(bedRoom).size());
     }
+
+    @Test
+    public void canBookRoom(){
+        hotel.bookRoom(bedRoom, guest.getName(), 2);
+        assertEquals("Mike", bedRoom.getBookingName());
+        assertEquals(true, bedRoom.getBookingStatus());
+    }
+
 }
