@@ -73,4 +73,23 @@ public class BedRoomTest {
         assertEquals(false, bedRoom.getBookingStatus());
     }
 
+    @Test
+    public void canGetBookingName(){
+        assertEquals("", bedRoom.getBookingName());
+    }
+
+    @Test
+    public void canChangeBookingStatusToTrue(){
+        assertEquals(false, bedRoom.getBookingStatus());
+        bedRoom.changeBookingStatusToTrue();
+        assertEquals(true, bedRoom.getBookingStatus());
+    }
+
+    @Test
+    public void canChangeBookingStatusToFalse(){
+        bedRoom.changeBookingStatusToTrue();
+        assertEquals(true, bedRoom.getBookingStatus());
+        bedRoom.changeBookingStatusToFalse();
+        assertEquals(false, bedRoom.getBookingStatus());
+    }
 }
