@@ -80,9 +80,24 @@ public class HotelTest {
 
     @Test
     public void canBookRoom(){
-        hotel.bookRoom(bedRoom, guest.getName(), 2);
+        hotel.bookRoom(bedRoom, guest.getName(), 2, 3);
         assertEquals("Mike", bedRoom.checkBookingName());
         assertEquals(true, bedRoom.getBookingStatus());
+        assertEquals(3, bedRoom.checkBookedNumberOfNights());
     }
+
+    @Test
+    public void canFindVacantBedroomsAllVacant(){
+        assertEquals(4, hotel.findVacantRooms().size());
+    }
+
+    @Test
+    public void canFindVacantBedroomsOneOccupied(){
+        BedRoom roomToBook = hotel.getBedRoomList().get(0);
+        hotel.bookRoom(roomToBook, "Mike", 1, 1);
+        assertEquals(3, hotel.findVacantRooms().size());
+    }
+
+
 
 }
