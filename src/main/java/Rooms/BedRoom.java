@@ -8,11 +8,13 @@ public class BedRoom extends Room {
     private int number;
     private RoomType type;
     private double nightlyRate;
-    public BedRoom(int capacity, RoomType type, double nightlyRate, int number){
-        super(capacity);
+    private boolean bookingStatus;
+    public BedRoom(RoomType type, double nightlyRate, int number){
+        super(type.getCapacity());
         this.number = number;
         this.type = type;
         this.nightlyRate = nightlyRate;
+        this.bookingStatus = false;
     }
 
     public int getNumber() {
@@ -37,6 +39,10 @@ public class BedRoom extends Room {
         } else {
             return false;
         }
+    }
+
+    public boolean getBookingStatus(){
+        return this.bookingStatus;
     }
 
 

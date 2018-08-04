@@ -17,7 +17,7 @@ public class BedRoomTest {
     Guest guest4;
     @Before
     public void before(){
-        bedRoom = new BedRoom(3, RoomType.DOUBLE, 50.50, 4);
+        bedRoom = new BedRoom(RoomType.DOUBLE, 50.50, 4);
         hotel = new Hotel();
         guest = new Guest("Mike");
         guest2 = new Guest("Ben");
@@ -27,7 +27,7 @@ public class BedRoomTest {
 
     @Test
     public void hasCapacity(){
-        assertEquals(3, bedRoom.getCapacity());
+        assertEquals(2, bedRoom.getCapacity());
     }
 
     @Test
@@ -58,4 +58,19 @@ public class BedRoomTest {
         hotel.checkIn(guest4, bedRoom);
         assertEquals(false, bedRoom.checkIfSpaceAvailable());
     }
+
+    @Test
+    public void doesNotCheckInIfNoSpace(){
+        hotel.checkIn(guest2, bedRoom);
+        hotel.checkIn(guest3, bedRoom);
+        hotel.checkIn(guest4, bedRoom);
+        hotel.checkIn(guest4, bedRoom);
+        assertEquals(2, bedRoom.checkHowManyGuests());
+    }
+
+    @Test
+    public void canCheckIfBooked(){
+        assertEquals(false, bedRoom.getBookingStatus());
+    }
+
 }

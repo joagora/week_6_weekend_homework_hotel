@@ -17,7 +17,12 @@ public class Hotel{
     }
 
     public void checkIn(Guest guest, BedRoom bedRoom){
-        bedRoom.setGuestList(guest);
+        if (bedRoom.checkIfSpaceAvailable()){
+            bedRoom.setGuestList(guest);
+        } else {
+            return;
+        }
+
     }
 
     public boolean checkIfCheckedIn(Guest guest, BedRoom bedroom){
