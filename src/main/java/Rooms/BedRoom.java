@@ -1,30 +1,29 @@
 package Rooms;
+import Enums.RoomCollectionType;
 import Enums.RoomType;
 import Guests.Guest;
 import java.util.ArrayList;
 
 public class BedRoom extends Room {
 
-    private int number;
-    private RoomType type;
+    private RoomCollectionType roomCollectionType;
     private double nightlyRate;
     private boolean bookingStatus;
     private String bookingName;
-    public BedRoom(RoomType type, double nightlyRate, int number){
-        super(type.getCapacity());
-        this.number = number;
-        this.type = type;
+    public BedRoom(RoomCollectionType roomCollectionType, double nightlyRate){
+        super(roomCollectionType.getRoomType().getCapacity());
+        this.roomCollectionType = roomCollectionType;
         this.nightlyRate = nightlyRate;
         this.bookingStatus = false;
         this.bookingName = "";
     }
 
     public int getNumber() {
-        return number;
+        return this.roomCollectionType.getNumber();
     }
 
-    public RoomType getType() {
-        return type;
+    public RoomType getTypeOfRoom() {
+        return this.roomCollectionType.getRoomType();
     }
 
     public double getNightlyRate() {

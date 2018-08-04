@@ -1,3 +1,4 @@
+import Enums.RoomCollectionType;
 import Enums.RoomType;
 import Guests.Guest;
 import Hotels.Hotel;
@@ -17,7 +18,7 @@ public class BedRoomTest {
     Guest guest4;
     @Before
     public void before(){
-        bedRoom = new BedRoom(RoomType.DOUBLE, 50.50, 4);
+        bedRoom = new BedRoom(RoomCollectionType.BLUE, 50.50);
         hotel = new Hotel();
         guest = new Guest("Mike");
         guest2 = new Guest("Ben");
@@ -27,12 +28,12 @@ public class BedRoomTest {
 
     @Test
     public void hasCapacity(){
-        assertEquals(2, bedRoom.getCapacity());
+        assertEquals(1, bedRoom.getCapacity());
     }
 
     @Test
     public void hasNumber(){
-        assertEquals(4, bedRoom.getNumber());
+        assertEquals(2, bedRoom.getNumber());
     }
 
     @Test
@@ -42,7 +43,7 @@ public class BedRoomTest {
 
     @Test
     public void hasType(){
-        assertEquals(RoomType.DOUBLE, bedRoom.getType());
+        assertEquals(RoomType.SINGLE, bedRoom.getTypeOfRoom());
     }
 
     @Test
@@ -65,7 +66,7 @@ public class BedRoomTest {
         hotel.checkIn(guest3, bedRoom);
         hotel.checkIn(guest4, bedRoom);
         hotel.checkIn(guest4, bedRoom);
-        assertEquals(2, bedRoom.checkHowManyGuests());
+        assertEquals(1, bedRoom.checkHowManyGuests());
     }
 
     @Test

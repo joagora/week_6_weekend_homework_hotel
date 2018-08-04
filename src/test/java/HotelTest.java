@@ -1,3 +1,4 @@
+import Enums.RoomCollectionType;
 import Enums.RoomType;
 import Guests.Guest;
 import Hotels.Hotel;
@@ -17,7 +18,7 @@ public class HotelTest {
     @Before
     public void before(){
         hotel = new Hotel();
-        bedRoom = new BedRoom(RoomType.DOUBLE, 50.50, 12);
+        bedRoom = new BedRoom(RoomCollectionType.SAPHIRE, 50.50);
         guest = new Guest("Mike");
         guest2 = new Guest("Robert");
     }
