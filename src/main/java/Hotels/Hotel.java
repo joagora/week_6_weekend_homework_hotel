@@ -1,19 +1,32 @@
 package Hotels;
 import Guests.Guest;
 import Rooms.BedRoom;
-import Rooms.Room;
+import Rooms.ConferenceRoom;
+import Rooms.DiningRoom;
 import java.util.ArrayList;
 
 public class Hotel{
 
-    private ArrayList<Room> roomList;
+    private ArrayList<BedRoom> bedRoomList;
+    private ArrayList<DiningRoom> diningRoomList;
+    private ArrayList<ConferenceRoom> conferenceRoomList;
 
     public Hotel(){
-       this.roomList = new ArrayList<>();
+        this.bedRoomList = new ArrayList<>();
+        this.conferenceRoomList = new ArrayList<>();
+        this.diningRoomList = new ArrayList<>();
     }
 
-    public ArrayList<Room> getRoomList(){
-        return roomList;
+    public ArrayList<BedRoom> getBedRoomList(){
+        return this.bedRoomList;
+    }
+
+    public ArrayList<ConferenceRoom> getConferenceRoom(){
+        return this.conferenceRoomList;
+    }
+
+    public ArrayList<DiningRoom> getDiningRoomList(){
+        return this.diningRoomList;
     }
 
     public void checkIn(Guest guest, BedRoom bedRoom){
@@ -59,5 +72,7 @@ public class Hotel{
         }
 
     }
+
+
 
 }
